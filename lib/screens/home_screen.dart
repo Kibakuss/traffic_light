@@ -67,7 +67,7 @@ class _TimerButtonsState extends State<TimerButtons> {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         ElevatedButton(onPressed: () {}, child: const Text('Start')),
-        ElevatedButton(onPressed: () {}, child: const Text('Pause')),
+        // ElevatedButton(onPressed: () {}, child: const Text('Pause')),
       ],
     );
   }
