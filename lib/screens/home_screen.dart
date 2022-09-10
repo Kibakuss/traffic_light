@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:traffic_light/widgets/light_widget.dart';
 
@@ -43,8 +45,8 @@ class _TrafficLightState extends State<TrafficLight> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: const [
               LightWidget(color: Colors.red),
-              LightWidget(color: Colors.yellow),
-              LightWidget(color: Colors.green),
+              // LightWidget(color: Colors.yellow),
+              // LightWidget(color: Colors.green),
             ],
           ),
         ),
@@ -61,6 +63,13 @@ class TimerButtons extends StatefulWidget {
 }
 
 class _TimerButtonsState extends State<TimerButtons> {
+  int seconds = 5;
+  void startTimer() {
+    Timer.periodic(Duration(seconds: 2), (timer) {
+      setState(() {});
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Row(

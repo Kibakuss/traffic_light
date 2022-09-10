@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:traffic_light/screens/home_screen.dart';
 
+import 'package:traffic_light/screens/test.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -11,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: HomeScreen(),
+      home: TestLight(),
     );
   }
 }
