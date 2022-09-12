@@ -48,18 +48,20 @@ class _TrafficLightTestState extends State<TrafficLightTest> {
       _isButtonPressed = true;
     });
 
-    Timer(const Duration(seconds: 5), () {
+    Timer(const Duration(seconds: 3), () {
       setState(() {
         _changeColorRed = true;
       });
     });
-    Timer(const Duration(seconds: 10), () {
+    Timer(const Duration(seconds: 6), () {
       setState(() {
+        _changeColorRed = false;
         _changeColorYellow = true;
       });
     });
-    Timer(const Duration(seconds: 15), () {
+    Timer(const Duration(seconds: 9), () {
       setState(() {
+        _changeColorYellow = false;
         _changeColorGreen = true;
       });
     });
@@ -81,7 +83,7 @@ class _TrafficLightTestState extends State<TrafficLightTest> {
               GestureDetector(
                 child: Container(
                   decoration: BoxDecoration(
-                      color: _changeColorRed ? Colors.black26 : Colors.red,
+                      color: _changeColorRed ? Colors.red : Colors.black26,
                       borderRadius: BorderRadius.circular(60)),
                   height: 100,
                   width: 100,
@@ -91,7 +93,7 @@ class _TrafficLightTestState extends State<TrafficLightTest> {
                 child: Container(
                   decoration: BoxDecoration(
                       color:
-                          _changeColorYellow ? Colors.black26 : Colors.yellow,
+                          _changeColorYellow ? Colors.yellow : Colors.black26,
                       borderRadius: BorderRadius.circular(60)),
                   height: 100,
                   width: 100,
@@ -100,7 +102,7 @@ class _TrafficLightTestState extends State<TrafficLightTest> {
               GestureDetector(
                 child: Container(
                   decoration: BoxDecoration(
-                      color: _changeColorGreen ? Colors.black26 : Colors.green,
+                      color: _changeColorGreen ? Colors.green : Colors.black26,
                       borderRadius: BorderRadius.circular(60)),
                   height: 100,
                   width: 100,
