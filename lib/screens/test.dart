@@ -15,8 +15,14 @@ class _TestLightState extends State<TestLight> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.blue[100],
         appBar: AppBar(
-          title: const Text('Test timer'),
+          centerTitle: true,
+          backgroundColor: Colors.blue[200],
+          title: const Text(
+            'Traffic Light by B.B.A.',
+            style: TextStyle(fontSize: 20, color: Colors.white),
+          ),
         ),
         body: SafeArea(
           child: Column(
@@ -64,6 +70,14 @@ class _TrafficLightTestState extends State<TrafficLightTest> {
         _changeColorYellow = false;
         _changeColorGreen = true;
       });
+      Timer(const Duration(seconds: 12), () {
+        setState(() {
+          _changeColorYellow = false;
+          _changeColorGreen = false;
+          _changeColorGreen = false;
+          _isButtonPressed = false;
+        });
+      });
     });
   }
 
@@ -109,6 +123,12 @@ class _TrafficLightTestState extends State<TrafficLightTest> {
                 ),
               ),
               ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.blue[200]),
+                  // padding: MaterialStateProperty.all(EdgeInsets.all(50)),
+                  // textStyle:
+                  //     MaterialStateProperty.all(TextStyle(fontSize: 15))),
+                ),
                 onPressed: _isButtonPressed == false ? _startTimer : null,
                 child: const Text('Start'),
               ),
