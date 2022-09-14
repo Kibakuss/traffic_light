@@ -1,8 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class TestLight extends StatefulWidget {
   const TestLight({super.key});
@@ -124,7 +122,10 @@ class _TrafficLightTestState extends State<TrafficLightTest> {
               ),
               ElevatedButton(
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.blue[200]),
+                  backgroundColor: MaterialStateProperty.all(
+                      _isButtonPressed == false
+                          ? Colors.blue[200]
+                          : Color.fromARGB(255, 88, 67, 65)),
                   // padding: MaterialStateProperty.all(EdgeInsets.all(50)),
                   // textStyle:
                   //     MaterialStateProperty.all(TextStyle(fontSize: 15))),

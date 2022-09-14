@@ -65,7 +65,7 @@ class TimerButtons extends StatefulWidget {
 class _TimerButtonsState extends State<TimerButtons> {
   int seconds = 5;
   void startTimer() {
-    Timer.periodic(Duration(seconds: 2), (timer) {
+    Timer.periodic(const Duration(seconds: 2), (timer) {
       setState(() {});
     });
   }
